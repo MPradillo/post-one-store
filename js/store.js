@@ -1,0 +1,14 @@
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const cart=JSON.parse(localStorage.getItem('postone-cart')||'{}');
+const drawer=$('.cart-drawer'), backdrop=$('.backdrop'), items=$('.cart-items'), subtotal=$('.subtotal'), count=$('.cartcount'), toast=$('.toast');
+function save(){localStorage.setItem('postone-cart',JSON.stringify(cart));render()}
+function render(){const vals=Object.values(cart);const n=vals.reduce((a,x)=>a+x.qty,0);if(count)count.textContent=n;if(!items)return;if(!vals.length){items.innerHTML='<p style="font-size:11px;color:#777">Your cart is empty.</p>';subtotal.textContent='$0';return}items.innerHTML=vals.map(x=>`<div class="cart-item"><div class="cart-thumb">${x.name.replace('POST ','')}</div><div><h4>${x.name}</h4><small>$${x.price}</small><div style="margin-top:6px"><button class="qminus" data-id="${x.id}">−</button> <b>${x.qty}</b> <button class="qplus" data-id="${x.id}">+</button></div></div><b>$${x.qty*x.price}</b></div>`).join('');subtotal.textContent='$'+vals.reduce((a,x)=>a+x.qty*x.price,0);$$('.qminus').forEach(b=>b.onclick=()=>{cart[b.dataset.id].qty--;if(cart[b.dataset.id].qty<=0)delete cart[b.dataset.id];save()});$$('.qplus').forEach(b=>b.onclick=()=>{cart[b.dataset.id].qty++;save()})}
+function openCart(){drawer?.classList.add('open');backdrop?.classList.add('show')}function closeCart(){drawer?.classList.remove('open');backdrop?.classList.remove('show')}$$('.js-cart').forEach(b=>b.onclick=openCart);$('.cart-close')?.addEventListener('click',closeCart);backdrop?.addEventListener('click',closeCart);
+function showToast(t){if(!toast)return;toast.textContent=t;toast.classList.add('show');clearTimeout(toast._t);toast._t=setTimeout(()=>toast.classList.remove('show'),1600)}
+$$('.addbtn').forEach(b=>b.onclick=()=>{const id=b.dataset.id;const qty=(id==='postone' && $('#qtyVal'))?parseInt($('#qtyVal').textContent):1;if(!cart[id])cart[id]={id,name:b.dataset.name,price:+b.dataset.price,qty:0};cart[id].qty+=qty;save();showToast(b.dataset.name+' added to cart')});
+$$('.faq-q').forEach(q=>q.onclick=()=>q.closest('.faq-item').classList.toggle('open'));
+$$('.tab[data-filter]').forEach(t=>t.onclick=()=>{$$('.tab[data-filter]').forEach(x=>x.classList.remove('active'));t.classList.add('active');const f=t.dataset.filter;$$('#productGrid .product-card').forEach(c=>c.style.display=f==='all'||c.dataset.cat===f?'flex':'none')});
+$$('.thumb[data-gallery]').forEach(t=>t.onclick=()=>{$$('.thumb').forEach(x=>x.classList.remove('active'));t.classList.add('active');const img=$('#mainGallery');if(img)img.src=t.dataset.gallery});
+$('#minusQty')?.addEventListener('click',()=>{const v=$('#qtyVal');v.textContent=Math.max(1,+v.textContent-1)});$('#plusQty')?.addEventListener('click',()=>{const v=$('#qtyVal');v.textContent=+v.textContent+1});
+$$('.newsletter').forEach(f=>f.onsubmit=e=>{e.preventDefault();showToast('Thanks — mock signup captured locally.');f.reset()});
+render();

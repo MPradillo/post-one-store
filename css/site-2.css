@@ -1,0 +1,94 @@
+.badge{align-self:flex-start;background:var(--lime);font-size:8px;font-weight:900;padding:4px 7px;border-radius:2px;margin-bottom:3px;text-transform:uppercase}
+.wide-promo{display:grid;grid-template-columns:1fr 1.25fr .75fr 1.1fr;min-height:190px}
+.promo-copy{background:#24272a;color:#fff;padding:31px}
+.promo-copy h2{font-family:Michroma;font-size:25px;line-height:1.1;margin:0 0 14px}
+.promo-copy p{font-size:10px;color:#cdd1ce;max-width:260px}
+.promo-photo{overflow:hidden;background:#ddd}
+.promo-photo img{width:100%;height:100%;object-fit:cover}
+.promo-icons{display:grid;place-items:center;background:#f4f5f3;text-align:center}
+.promo-icons .miniicon{margin:8px;font-size:10px}
+.promo-icons svg{width:30px;height:30px;display:block;margin:0 auto 4px;fill:none;stroke:#1f2224;stroke-width:1.5}
+.darkphoto{position:relative}
+.darkphoto .overlaytext{position:absolute;right:18px;bottom:18px;color:white;text-align:right;font-family:Michroma;font-size:12px}
+.testimonials{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.quote{border:1px solid #e0e3df;padding:14px;display:grid;grid-template-columns:65px 1fr;gap:12px;background:#fff}
+.avatar{width:58px;height:58px;border-radius:50%;background:linear-gradient(135deg,#aeb8ad,#4a5350)}
+.stars{color:var(--lime2);font-size:12px}
+.quote p{font-size:10px;color:#555b5e;margin:4px 0}
+.quote strong{font-size:10px}
+.footer{background:#222528;color:#fff;padding:30px 0 16px}
+.footer-grid{display:grid;grid-template-columns:1.4fr .6fr .6fr .6fr 1.25fr;gap:24px}
+.footer-logo{font-family:Michroma;font-size:20px}
+.footer-logo span{color:var(--lime)}
+.footer small{font-size:8px;letter-spacing:.2em;color:#d1d4d0}
+.footer h4{font-size:9px;margin:0 0 8px}
+.footer a{display:block;font-size:9px;color:#d0d3d0;margin:4px 0}
+.newsletter{display:flex}
+.newsletter input{flex:1;border:0;border-radius:4px 0 0 4px;padding:9px;font-size:10px}
+.newsletter button{border:0;background:#fff;padding:0 12px;border-radius:0 4px 4px 0}
+.footer-bottom{border-top:1px solid #555b5d;margin-top:22px;padding-top:10px;display:flex;justify-content:space-between;font-size:8px;color:#b5bab7}
+.commerce-hero{display:grid;grid-template-columns:61% 39%;min-height:460px}
+.gallery{background:#e6e9e6}
+.gallery-main{height:350px;overflow:hidden}
+.gallery-main img{width:100%;height:100%;object-fit:cover}
+.thumbs{height:70px;display:grid;grid-template-columns:repeat(6,1fr);gap:7px;padding:8px 0}
+.thumb{border:1px solid #d3d6d4;overflow:hidden;background:#eee}
+.thumb.active{outline:2px solid var(--lime)}
+.thumb img{width:100%;height:100%;object-fit:cover}
+.buy-panel{padding:34px 34px 30px;background:#fff}
+.crumb{font-size:9px;color:#909597;margin-bottom:12px}
+.product-name{font-family:Michroma;font-size:43px;line-height:1;margin:0 0 5px}
+.subtitle{font-size:14px;color:#4f5558}
+.rating{display:flex;gap:8px;align-items:center;font-size:10px;color:#6d7275;margin:8px 0}
+.rating .stars{font-size:17px}
+.buy-price{font-size:27px;font-weight:900;margin:5px 0}
+.buy-desc{font-size:12px;color:#656b6e}
+.finish{font-size:11px;font-weight:700}
+.swatch{width:35px;height:35px;border-radius:50%;background:#303235;border:3px solid #b8d936;box-shadow:0 0 0 1px #222;margin:8px 0 13px}
+.buy-actions{display:grid;grid-template-columns:82px 1fr 1fr;gap:10px}
+.qty{display:flex;border:1px solid #ddd;height:40px;align-items:center;justify-content:space-around}
+.qty button{border:0;background:transparent}
+.trust-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:19px}
+.trust{display:flex;gap:7px;align-items:center;font-size:8px}
+.trust svg{width:25px;height:25px;fill:none;stroke:#222;stroke-width:1.6}
+.info-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:28px}
+.benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.benefit{border:1px solid #e3e5e2;padding:14px}
+.benefit svg{width:38px;height:38px;border:1px solid #222;border-radius:50%;padding:8px;fill:none;stroke:#222;stroke-width:1.5}
+.benefit h3{font-family:Michroma;font-size:10px}
+.benefit p{font-size:9px;color:#73787b}
+.specs{width:100%;border-collapse:collapse;font-size:9px}
+.specs td{padding:4px 7px;border-bottom:1px solid #e4e6e3}
+.specs td:first-child{font-weight:800;width:43%}
+.banner-strip{height:132px;overflow:hidden;position:relative}
+.banner-strip img{width:100%;height:100%;object-fit:cover}
+.faq-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
+.faq-item{border:1px solid #e2e4e1;background:#fff}
+.faq-q{width:100%;display:flex;justify-content:space-between;padding:12px;border:0;background:transparent;font-size:10px;text-align:left}
+.faq-a{display:none;padding:0 12px 12px;font-size:9px;color:#6b7073}
+.faq-item.open .faq-a{display:block}
+.addon-hero{display:grid;grid-template-columns:37% 63%;min-height:290px;background:#edf0ed}
+.addon-copy{padding:35px 32px 28px max(30px,calc((100vw - 1180px)/2))}
+.addon-copy h1{font-family:Michroma;font-size:43px;line-height:1;margin:0 0 8px}
+.addon-copy p{font-size:13px;color:#606669;max-width:320px}
+.addon-visual img{width:100%;height:100%;object-fit:cover}
+.tabs{display:flex;justify-content:space-between;border-bottom:1px solid #ddd;margin-bottom:18px}
+.tabset{display:flex;gap:26px}
+.tab{border:0;background:transparent;padding:14px 0;font-size:11px}
+.tab.active{border-bottom:3px solid var(--lime);font-weight:800}
+.sort{font-size:9px;padding-top:14px}
+.essentials{display:grid;grid-template-columns:1.2fr repeat(3,.72fr) 1fr;align-items:center;gap:14px;padding:22px 0}
+.essentials h2,.drybetter h2,.together h2{font-family:Michroma;font-size:26px;margin:0 0 7px}
+.essentials p,.drybetter p,.together p{font-size:11px;color:#5f6669}
+.mini-prod{text-align:center}
+.mini-prod img{height:95px;margin:auto;object-fit:contain}
+.mini-prod h4{font-family:Michroma;font-size:10px;margin:4px}
+.mini-prod .price{font-size:14px}
+.benefit-stack{border-left:1px solid #ccd0cd;padding-left:18px}
+.benefit-line{display:flex;align-items:center;gap:11px;margin:10px 0;font-size:9px}
+.drybetter{display:grid;grid-template-columns:.8fr 1.1fr 1.1fr;gap:10px;align-items:stretch}
+.drycopy{padding:28px 10px 20px 0}
+.lifestyle-tile{position:relative;min-height:235px;overflow:hidden}
+.lifestyle-tile img{width:100%;height:100%;object-fit:cover}
+.lifestyle-tile .title{position:absolute;top:18px;left:18px;color:#fff;font-family:Michroma;font-size:16px;line-height:1.15}
+.together{display:grid;grid-template-columns:1.1fr 2.2fr .55fr;align-items:center;gap:18px}
